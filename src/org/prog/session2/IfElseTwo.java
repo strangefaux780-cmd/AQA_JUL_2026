@@ -15,5 +15,6 @@ public class IfElseTwo {
         } else {
             System.out.println("I will go and buy iPhone!");
         }
+
     }
 }
