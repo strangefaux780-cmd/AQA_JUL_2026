@@ -15,6 +15,7 @@ public class Homework2masive {
             for (int i = 0; i < arr2.length; i++) {
                 arr2[arr2.length - 1 - i] = arr1[i];
             }
+        System.out.println("====================================================================================================");
             for (int i = 0;i< arr2.length;i++){
                 System.out.println(arr2[i]);
             }
