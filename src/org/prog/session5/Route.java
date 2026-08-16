@@ -1,4 +1,5 @@
 package org.prog.session5;
+import java.util.Random;
 public class Route {
     public String name;
     public int distance;
