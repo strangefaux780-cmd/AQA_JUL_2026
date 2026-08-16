@@ -5,7 +5,7 @@ public class BUSHM {
     String roUteB;
     int carGOMax=2000;
     int cargoMin=400;
-    int numBerPointsstandart=70;
+    int numBerPointsstandart=35;
     public static int totalDistance=0;
     public void goRouteB(Route route) {
         Random random = new Random();
