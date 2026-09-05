@@ -5,6 +5,7 @@ import org.prog.session9.Car;
 public class Apple implements Iphone {
     String color;
     String model;
+    public String NumbersPeople;
 
     public Apple(String color, String model) {
         this.model = model;

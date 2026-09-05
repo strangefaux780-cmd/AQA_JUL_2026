@@ -3,9 +3,11 @@ package org.prog.session8;
 public class Android implements Iphone {
     String color;
     String model;
+    public String NumbersPeople;
     public Android (String color,String model) {
         this.color = color;
         this.model = model;
+
     }
         @Override
         public boolean equals(Object Obj){
@@ -23,4 +25,5 @@ public class Android implements Iphone {
         System.out.println("android uncklock fingers ");
     }
     public int hashCode(){return (this.color+this.model).hashCode();}
+
 }
