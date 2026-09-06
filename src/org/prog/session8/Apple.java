@@ -18,9 +18,11 @@ public class Apple implements Iphone {
     public boolean equals(Object obj) {
         if (obj instanceof Apple) {
             Apple apel = (Apple) obj;
+            if (color == null || model == null) {
+                throw new Exceptionus("Exeptionus works");
+            }
             boolean isequals = this.color.equals(apel.color)
                     && this.model.equals(apel.model);
-
         }
         return false;
     }
@@ -28,9 +30,10 @@ public class Apple implements Iphone {
     @Override
     public void unklockPhone() {
         System.out.println("apple unklock face id ");
+}
+    public int hashCode() {if(color ==null||model ==null) {
+        throw new Exceptionus("Exeptionus works");
     }
-
-    public int hashCode() {
         return (this.color + this.model + this.contacts + this.owner).hashCode();
     }
 
@@ -38,6 +41,8 @@ public class Apple implements Iphone {
         return "Apple[color=" + color + ", model=" + model + ", contacts=" + contacts + ", owner=" + owner + "]";
     }
 }
+
+
 
 
 

@@ -5,8 +5,8 @@ import java.util.Random;
 public class PLAYROOMJAVA {
     public static void main(String[] args) {
         Random random = new Random();
-        int[] arr1 = new int[7];
-        int max=arr1[0];
+        int[] arr1 = new int[10];
+        int max=arr1[8];
         for (int i = 0; i < arr1.length; i++) {
             arr1[i] = random.nextInt(7);
             //System.out.println(arr1[i]);
