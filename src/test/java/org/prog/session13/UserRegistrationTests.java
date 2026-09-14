@@ -102,6 +102,7 @@ public class UserRegistrationTests {
         int i = new Random().nextInt(100);
         return Stream.of(Arguments.of(i));
     }
+
     @ParameterizedTest
     @MethodSource("phoneColors")
     public void Phonne(String color){

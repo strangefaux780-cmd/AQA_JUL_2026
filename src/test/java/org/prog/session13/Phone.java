@@ -7,7 +7,6 @@ public class Phone {
     }
         public String getColor(){
         return color ;
-
         }
     }
 
