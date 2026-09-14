@@ -1,6 +1,6 @@
 package org.prog.session3;
 
-import java.lang.module.FindException;
+
 import java.util.Random;
 
 public class Homework2masive {
