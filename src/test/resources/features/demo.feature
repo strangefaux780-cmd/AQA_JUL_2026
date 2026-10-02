@@ -2,6 +2,9 @@
 #  - load allo.ua
 #  - search for something (phone, etc)
 #  - phone/etc name must be passed from cucumber scenario
+#  - Add step: check if X goods name is in database
+#  - For each goods that is NOT in DB - store its name and price
+#  - For each goods which name IS in DB - check if price did not change. If price changed - update it in DB.
 
 Feature: My demo
 
@@ -18,20 +21,20 @@ Feature: My demo
 
 
   Scenario: My scenario 1
-    Given I request 3 random people from service
-    Given I store these people to DB
-    Given I pick random person form DB
+    Given I request 3 random people from service as "mob_1"
+    Given I store "mob_1" people to DB
+    Given I pick random person form DB as "random_person_1"
     Given I load google page
-    When I set google page search to random person's first and last name
-    Then Google search has that person's first and last name in search input
+    When I set google page search to "random_person_1" first and last name
+    Then Google has "random_person_1" first and last name in search input
 
   Scenario: My scenario 2
-    Given Create custom person
+    Given Create custom person as "customer_1"
       | FirstName | Billy |
       | LastName  | Kid   |
       | Gender    | male  |
       | Title     | Mr    |
       | Nat       | US    |
     Given I load google page
-    When I set google page search to random person's first and last name
-    Then Google search has that person's first and last name in search input
+    When I set google page search to "customer_1" first and last name
+    Then Google has "customer_1" first and last name in search input
