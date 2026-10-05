@@ -6,12 +6,10 @@ import org.prog.session17.dto.PersonDto;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class dbPhoneTest {
+    private String checkSQL = "SELECT * FROM PHONES WHERE PHONE_NAMES = ?";
     private String insertSQL =
             "INSERT INTO PHONES(PHONE_NAMES,CODE_PHONES,PRICE_PHONES) VALUES (?, ?, ?)";
     private Connection conn;
@@ -33,14 +31,19 @@ public class dbPhoneTest {
         }
     }
 
+    public boolean cHeckSQL(String keyName) throws SQLException {
+        PreparedStatement checkPhoneKey = conn.prepareStatement(checkSQL);
+        checkPhoneKey.setString(1, keyName);
+        checkPhoneKey.executeQuery();
+        ResultSet rs = checkPhoneKey.executeQuery();
+        return rs.next();
+    }
     public void phoneDB(String name, String code, String price) throws SQLException {
         PreparedStatement phoneFind = conn.prepareStatement(insertSQL);
         phoneFind.setString(1, name);
         phoneFind.setString(2, code);
         phoneFind.setString(3, price);
         phoneFind.execute();
-
-
     }
 
      }

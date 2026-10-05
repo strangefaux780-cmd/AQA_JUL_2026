@@ -88,7 +88,11 @@ public class optionsPage {
             String name=phoneNames.get(i);
             String code=phoneCodes.get(i);
             String price=phonePrices.get(i);
-            db.phoneDB(name, code, price);
+            if (db.cHeckSQL(name)) {
+                System.out.println("already exists" + name);
+            } else {
+                db.phoneDB(name, code, price);
+            }
         }
     }
 
