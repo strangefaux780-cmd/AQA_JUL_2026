@@ -33,11 +33,11 @@ public class dbPhoneTest {
         }
     }
 
-    public void phoneDB(String Name, String Code, String Price) throws SQLException {
+    public void phoneDB(String name, String code, String price) throws SQLException {
         PreparedStatement phoneFind = conn.prepareStatement(insertSQL);
-        phoneFind.setString(1, Name);
-        phoneFind.setString(2, Code);
-        phoneFind.setString(3, Price);
+        phoneFind.setString(1, name);
+        phoneFind.setString(2, code);
+        phoneFind.setString(3, price);
         phoneFind.execute();
 
 
