@@ -1,6 +1,7 @@
 package org.prog.session17;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -51,7 +52,7 @@ public class optionsPage {
         search.sendKeys(Phones);
         search.sendKeys(Keys.ENTER);
     }
-
+@Given("Find names phones")
     public List<String> getProductNames(int limit) {
         return driver.findElements(By.xpath("//a[@class='product-card__title']"))
                 .stream()
@@ -59,6 +60,7 @@ public class optionsPage {
                 .map(el -> el.getAttribute("textContent"))
                 .toList();
     }
+    @Given("Find code phones")
     public List<String> getProductCode(int limit) {
         return driver.findElements(By.xpath("//span[@class='product-sku__value']"))
                 .stream()
@@ -66,6 +68,7 @@ public class optionsPage {
                 .map(el -> el.getAttribute("textContent"))
                 .toList();
     }
+    @Given("Find price phones ")
     public List<String> getProductPrice(int limit) {
         return driver.findElements(By.xpath("//div[@class='v-pb__cur discount']"))
                 .stream()
@@ -74,7 +77,7 @@ public class optionsPage {
                 .toList();
     }
 
-
+@Then("Input in DB")
     public void publichPhone(int limit) throws SQLException {
         WebDriverWait waitpage = new WebDriverWait(driver, Duration.ofSeconds(40));
         WebElement productName = waitpage.until(
